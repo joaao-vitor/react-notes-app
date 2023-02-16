@@ -1,0 +1,75 @@
+.ql-toolbar, .ql-container {
+    border-color: #9191913b !important;
+}
+
+.ql-toolbar {
+    border-color: #9191913b !important;
+
+}
+
+.ql-container {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+}
+
+.ql-editor {
+    font-family: 'Poppins';
+    line-height: 1.75rem;
+}
+
+.ql-snow .ql-stroke {
+    stroke: white;
+}
+
+.ql-editor h1 {
+    font-family: 'Poppins';
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.ql-formats * {
+    color: white;
+}
+
+.note>h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.note>h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.note>h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.note>ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.note>ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+.note>ul ul, .note>ol ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin-left: 15px;
+}
+
+.note>ol ol, .note>ul ol {
+    list-style-type: lower-latin;
+    list-style-position: inside;
+    margin-left: 15px;
+}
