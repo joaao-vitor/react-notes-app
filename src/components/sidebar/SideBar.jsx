@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NotesMenu from './NotesMenu/NotesMenu';
 import SearchBar from './SearchBar/SearchBar';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineClose, AiOutlinePlus } from 'react-icons/ai';
 import classNames from 'classnames';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ import {
     toggleSideBar,
     changeSideBar,
 } from '../../features/sideBar/sideBarSlice';
+import { Link } from 'react-router-dom';
 
 export default function SideBar() {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -36,7 +37,7 @@ export default function SideBar() {
             </span>
             <aside
                 className={classNames(
-                    'p-5 bg-black lg:w-1/5 h-screen sm:w-1/3 w-screen flex flex-col',
+                    'p-5 bg-black lg:max-w-[20%] h-screen sm:max-w-[30%] w-screen flex flex-col',
                     {
                         hidden: !showMenu && !isDesktop,
                         absolute: !isDesktop,
@@ -44,7 +45,14 @@ export default function SideBar() {
                     }
                 )}
             >
-                <SearchBar />
+                <div className="mt-24 flex flex-col">
+                    <Link to="/notes/new" className="self-end">
+                        <button className="text-zinc-200 text-xs rounded-lg border-red-800 border-2 hover:bg-red-800 transition-all px-3 py-2 mb-4 flex gap-2 items-center">
+                            <AiOutlinePlus /> new note
+                        </button>
+                    </Link>
+                    <SearchBar />
+                </div>
                 <NotesMenu
                     hideMenu={() =>
                         isDesktop ? null : dispatch(changeSideBar(false))

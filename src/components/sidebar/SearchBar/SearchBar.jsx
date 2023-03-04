@@ -11,7 +11,7 @@ export default function SearchBar() {
     };
 
     return (
-        <div className="w-full mt-24">
+        <div className="w-full">
             <input
                 className="text-zinc-400 px-3 py-2 rounded-2xl text-sm w-full bg-transparent
                             border-neutral-700 border-2 placeholder-neutral-600

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { routes } from './config/routes';
 import App from './App';
 import Note from './components/Note/Note';
+import AddNote from './components/AddNote/AddNote';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<App />}>
+                        <Route path="/notes/new" element={<AddNote />} />
                         <Route path="/notes/:id" element={<Note />} />
                     </Route>
                 </Routes>

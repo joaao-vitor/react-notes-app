@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Note from '../components/Note/Note';
 import App from '../App';
-import { useDispatch } from 'react-redux';
-import { fetchNoteById } from '../features/data/dataSlice';
+import AddNote from '../components/AddNote/AddNote';
 
 export const routes = createBrowserRouter([
     {
@@ -10,8 +9,13 @@ export const routes = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: 'notes/:noteid',
-                element: <Note />,
+                path: 'notes',
+                children: [
+                    {
+                        path: 'new',
+                        element: <AddNote />,
+                    },
+                ],
             },
         ],
     },

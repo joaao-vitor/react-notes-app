@@ -7,7 +7,7 @@ const initialState = {
     error: '',
 };
 
-const BASE_URL = 'http://192.168.0.23:3000';
+const BASE_URL = 'http://192.168.0.13:3000';
 
 export const fetchNotes = createAsyncThunk('notes/fetchNotes', () => {
     return axios.get(`${BASE_URL}/notes`).then((res) => res.data);

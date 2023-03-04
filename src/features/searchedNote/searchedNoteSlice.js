@@ -1,7 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { fetchNotes } from '../data/dataSlice';
 
 const initialState = {
     loading: false,
@@ -9,7 +7,7 @@ const initialState = {
     error: '',
 };
 
-const BASE_URL = 'http://192.168.0.23:3000';
+const BASE_URL = 'http://192.168.0.13:3000';
 
 export const fetchNoteById = createAsyncThunk('notes/fetchNotesById', (id) => {
     return axios.get(`${BASE_URL}/notes/${id}`).then((res) => res.data);
@@ -19,6 +17,13 @@ export const updateNote = createAsyncThunk('notes/updateNote', (note) => {
     return axios
         .put(`${BASE_URL}/notes/${note.id}`, note)
         .then((res) => res.data);
+});
+
+export const addNote = createAsyncThunk('notes/updateNote', async (note) => {
+    const res = await axios
+        .post(`${BASE_URL}/notes/`, note)
+        .then((res) => res.data);
+    return res;
 });
 
 const searchedNoteSlice = createSlice({
@@ -55,4 +60,3 @@ const searchedNoteSlice = createSlice({
 });
 
 export default searchedNoteSlice.reducer;
-export const { editNote } = searchedNoteSlice.actions;

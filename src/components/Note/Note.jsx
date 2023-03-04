@@ -55,16 +55,19 @@ export default function Note() {
         setContent(note.note.content);
         setIcon(note.note.icon);
         setTitle(note.note.title);
-    }, [note.note.content]);
+    }, [note.loading]);
 
     return (
         !note.loading && (
             <article className="py-4 px-8 lg:py-8 lg:px-24 m-auto w-11/12 bg-neutral-800 opacity-80 rounded-xl text-zinc-200 font-poppins h-[90%] flex flex-col overflow-auto">
-                <div className="text-2xl mb-3 w-full flex justify-between">
-                    <div className="flex gap-5 items-center">
+                <div className="text-2xl mb-3 w-full flex gap-5 justify-between">
+                    <div className="flex gap-5 items-center w-4/5">
                         <span
                             className={classNames('text-xl', {
                                 'text-orange-500': !note.note.icon,
+                                'cursor-pointer': editorVisible,
+                                ' hover:scale-125 transition-all':
+                                    editorVisible,
                             })}
                             onClick={toggleEmojiPicker}
                         >
@@ -77,15 +80,19 @@ export default function Note() {
                                 )}
                             </div>
                         </span>
-                        <span className="font-semibold">
-                            <input
-                                type="text"
-                                value={title}
-                                className="bg-transparent outline-none"
-                                readOnly={!editorVisible}
-                                onChange={editTitle}
-                            />
-                        </span>
+                        <input
+                            type="text"
+                            value={title}
+                            className={classNames(
+                                'bg-transparent outline-none w-full font-semibold',
+                                {
+                                    'hover:text-3xl hover:text-white transition-all cursor-pointer':
+                                        editorVisible,
+                                }
+                            )}
+                            readOnly={!editorVisible}
+                            onChange={editTitle}
+                        />
                     </div>
                     <button
                         className={classNames(
