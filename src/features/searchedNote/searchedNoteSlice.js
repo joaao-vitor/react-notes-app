@@ -26,6 +26,12 @@ export const addNote = createAsyncThunk('notes/updateNote', async (note) => {
     return res;
 });
 
+export const deleteNote = createAsyncThunk('notes/deleteNote', async (note) => {
+    return await axios
+        .delete(`${BASE_URL}/notes/${note.id}`)
+        .then((res) => res.data);
+});
+
 const searchedNoteSlice = createSlice({
     name: 'data',
     initialState,
@@ -52,6 +58,19 @@ const searchedNoteSlice = createSlice({
             state.error = '';
         });
         builder.addCase(updateNote.rejected, (state, action) => {
+            state.loading = false;
+            state.note = {};
+            state.error = action.error.message;
+        });
+        builder.addCase(deleteNote.pending, (state) => {
+            state.loading = true;
+        });
+        builder.addCase(deleteNote.fulfilled, (state, action) => {
+            state.loading = false;
+            state.note = {};
+            state.error = '';
+        });
+        builder.addCase(deleteNote.rejected, (state, action) => {
             state.loading = false;
             state.note = {};
             state.error = action.error.message;

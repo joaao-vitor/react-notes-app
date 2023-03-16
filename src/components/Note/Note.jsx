@@ -2,23 +2,37 @@ import React, { useEffect, useState } from 'react';
 import parse from 'html-react-parser';
 import classNames from 'classnames';
 
+import * as Toast from '@radix-ui/react-toast';
+
 import { fetchNoteById, fetchNotes } from '../../features/data/dataSlice';
-import { updateNote } from '../../features/searchedNote/searchedNoteSlice';
+import {
+    deleteNote,
+    updateNote,
+} from '../../features/searchedNote/searchedNoteSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import ReactQuill from 'react-quill';
 import EmojiPicker from 'emoji-picker-react';
 import 'react-quill/dist/quill.snow.css';
 import './Note.css';
+import {
+    setClasses,
+    setMessage,
+    setOpen,
+} from '../../features/toast/toastSlice';
 
 export default function Note() {
+    const navigate = useNavigate();
+
     const [content, setContent] = useState('');
     const [title, setTitle] = useState('');
     const [icon, setIcon] = useState('');
 
     const [emojiPicker, setEmojiPicker] = useState(false);
     const [editorVisible, setEditorVisible] = useState(false);
+
+    const toast = useSelector((state) => state.toast);
 
     const dispatch = useDispatch();
     const note = useSelector((state) => state.searchedNote);
@@ -31,8 +45,22 @@ export default function Note() {
                 updateNote({ ...note.note, content, title, icon, date })
             );
             dispatch(fetchNotes());
+            dispatch(setMessage('Note edited with success!'));
+            dispatch(setClasses('bg-orange-500'));
+            dispatch(setOpen(true));
         }
         setEditorVisible((prevState) => !prevState);
+    };
+
+    const handleDelete = async () => {
+        await dispatch(deleteNote(note.note));
+
+        dispatch(setMessage('Note deleted with success!'));
+        dispatch(setClasses('bg-red-600'));
+        dispatch(setOpen(true));
+
+        navigate(`/`);
+        dispatch(fetchNotes());
     };
 
     const toggleEmojiPicker = () => {
@@ -96,7 +124,7 @@ export default function Note() {
                     </div>
                     <button
                         className={classNames(
-                            'border-2 text-sm px-6 py-1 justify-self-end rounded-md border-orange-500 hover:bg-orange-500 hover:text-zinc-200 transition-all',
+                            'border-2 text-sm px-6 py-1 justify-self-end rounded-md border-orange-500 hover:bg-orange-500 hover:text-zinc-100 transition-all',
                             {
                                 'border-green-600': editorVisible,
                                 'hover:bg-green-600': editorVisible,
@@ -105,6 +133,12 @@ export default function Note() {
                         onClick={handleClick}
                     >
                         {editorVisible ? 'save' : 'edit'}
+                    </button>
+                    <button
+                        className="border-2 text-sm px-6 py-1 justify-self-end rounded-md border-red-500 hover:bg-red-500 hover:text-zinc-100 transition-all"
+                        onClick={handleDelete}
+                    >
+                        delete
                     </button>
                 </div>
                 <hr className="h-[0.5px] w-11/12 rounded-full self-center bg-gray-500 border-0  mb-5" />

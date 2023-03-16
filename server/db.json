@@ -1,55 +1,10 @@
 {
   "notes": [
     {
-      "id": 1,
-      "title": "do you feals",
-      "icon": "☹️",
-      "date": "Wed, 15 Feb 2023 11:52:59 GMT",
-      "content": "<h1>novo titulo</h1><p><strong>eget nunc mi. Maecenas semper metus odio, eget congue nisl interdum euismod. Phasellus </strong>elementum<strong> nisi tortor, at fringilla neque semper id. Donec ac placerat orci. Nulla non purus dictum, gravida elit a, rutrum ante. Vdlawdkopaestibulum feugiat eleifend magna in pharetra. Phasellus faucibus eros a scelerisque porttitor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in vulputate est. Cras ut lorem vel massa aliquet semper vitae in urna. Nullam tincidunt dignissim condimentum.</strong></p>"
-    },
-    {
-      "id": 2,
-      "title": "viajei para um novo mundo na california",
-      "date": "01/04/2023",
-      "content": "Proin eget nunc mi. Maecenas semper metus odio, eget congue nisl interdum euismod. Phasellus elementum nisi tortor, at fringilla neque semper id. Donec ac placerat orci. Nulla non purus dictum, gravida elit a, rutrum ante. Vestibulum feugiat eleifend magna in pharetra. Phasellus faucibus eros a scelerisque porttitor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in vulputate est. Cras ut lorem vel massa aliquet semper vitae in urna. Nullam tincidunt dignissim condimentum."
-    },
-    {
-      "id": 3,
-      "title": "dsadwasdwad",
-      "date": "Thu, 16 Feb 2023 03:24:34 GMT",
-      "content": "<p>awdasdwadasd</p>",
-      "icon": "😆"
-    },
-    {
-      "id": 4,
-      "title": "uma nova nota para a lista!",
-      "date": "Wed, 15 Feb 2023 13:31:38 GMT",
-      "content": "<p>Vamos começar escrevendo um conteúdo completamente no00vo!</p>"
-    },
-    {
-      "id": 5,
-      "title": "dadsdawd",
-      "date": "Thu, 16 Feb 2023 03:13:49 GMT",
-      "content": ""
-    },
-    {
       "id": 6,
       "title": "viajei para um novo mundo na california",
       "date": "01/04/2023",
       "content": "Proin eget nunc mi. Maecenas semper metus odio, eget congue nisl interdum euismod. Phasellus elementum nisi tortor, at fringilla neque semper id. Donec ac placerat orci. Nulla non purus dictum, gravida elit a, rutrum ante. Vestibulum feugiat eleifend magna in pharetra. Phasellus faucibus eros a scelerisque porttitor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in vulputate est. Cras ut lorem vel massa aliquet semper vitae in urna. Nullam tincidunt dignissim condimentum."
-    },
-    {
-      "id": 7,
-      "title": "dawsdwa",
-      "date": "Thu, 16 Feb 2023 03:17:02 GMT",
-      "content": "",
-      "icon": "🥴"
-    },
-    {
-      "id": 8,
-      "title": "note nº4",
-      "date": "Wed, 15 Feb 2023 13:54:18 GMT",
-      "content": "<p>111</p>"
     },
     {
       "id": 9,
@@ -65,35 +20,10 @@
       "content": "Proin eget nunc mi. Maecenas semper metus odio, eget congue nisl interdum euismod. Phasellus elementum nisi tortor, at fringilla neque semper id. Donec ac placerat orci. Nulla non purus dictum, gravida elit a, rutrum ante. Vestibulum feugiat eleifend magna in pharetra. Phasellus faucibus eros a scelerisque porttitor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in vulputate est. Cras ut lorem vel massa aliquet semper vitae in urna. Nullam tincidunt dignissim condimentum."
     },
     {
-      "id": 11,
-      "title": "44541454",
-      "date": "Thu, 16 Feb 2023 03:11:25 GMT",
-      "content": "",
-      "icon": "🤯"
-    },
-    {
       "id": 12,
       "title": "note nº4",
       "date": "01/01/2023",
       "content": "Proin eget nunc mi. Maecenas semper metus odio, eget congue nisl interdum euismod. Phasellus elementum nisi tortor, at fringilla neque semper id. Donec ac placerat orci. Nulla non purus dictum, gravida elit a, rutrum ante. Vestibulum feugiat eleifend magna in pharetra. Phasellus faucibus eros a scelerisque porttitor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in vulputate est. Cras ut lorem vel massa aliquet semper vitae in urna. Nullam tincidunt dignissim condimentum."
-    },
-    {
-      "content": "",
-      "title": "o filho de rosemary",
-      "date": "Thu, 16 Feb 2023 04:06:37 GMT",
-      "id": 13
-    },
-    {
-      "content": "",
-      "title": "essa é a nota 14",
-      "date": "Thu, 16 Feb 2023 04:06:46 GMT",
-      "id": 14
-    },
-    {
-      "content": "<h1>QUE NOTA MARAVILHOSAhdjejeiwk</h1>",
-      "title": "WOOOOOOW!",
-      "date": "Thu, 16 Feb 2023 04:16:12 GMT",
-      "id": 15
     }
   ]
 }

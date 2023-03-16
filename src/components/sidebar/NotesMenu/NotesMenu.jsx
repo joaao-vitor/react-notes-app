@@ -34,9 +34,7 @@ export default function NotesMenu(props) {
                                 name={item.title}
                                 active={item.id === idSelected}
                                 date={item.date}
-                                onMouseEnter={() =>
-                                    dispatch(selectItem(item.id))
-                                }
+                                onMouseEnter={() => dispatch(selectItem(item.id))}
                                 onMouseOut={() => dispatch(selectItem(0))}
                                 onClick={handleClick}
                             />
